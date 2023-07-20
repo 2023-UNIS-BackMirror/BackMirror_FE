@@ -10,7 +10,7 @@ const QnAPage = () => {
     <div>
       <BackButton />
       <Wrapper>
-        <QuestionBox />
+        <QuestionBox text={"당신이 생각하는 문제 해결 방법은 무엇인가요?"} />
         <Stone>
           <img src={grayStone} alt="" />
         </Stone>

@@ -2,13 +2,11 @@ import question from "../../assets/QnA/question.png";
 import { styled } from "styled-components";
 import React from "react";
 
-const QuestionBox = () => {
+const QuestionBox = ({ text }) => {
   return (
     <QBox>
       <img src={question} alt="" />
-      <div className="question">
-        당신이 생각하는 문제 해결 방법은 무엇인가요?
-      </div>
+      <div className="question">{text}</div>
     </QBox>
   );
 };
