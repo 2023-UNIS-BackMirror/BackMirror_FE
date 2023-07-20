@@ -32,6 +32,12 @@ const Img = styled.div`
   border-radius: 100px;
   background: #fafafa;
   display: flex;
+  overflow: hidden;
+
+  img {
+    width: 93px;
+    height: 100px;
+  }
 `;
 const Name = styled.div`
   width: 203px;
@@ -52,13 +58,13 @@ const Content = styled.div`
   font-size: 13px;
   font-style: normal;
   font-weight: 500;
-  line-height: 170%; /* 22.1px */
+  line-height: 170%;
   letter-spacing: 0.13px;
   overflow: hidden;
   text-overflow: ellipsis;
   word-break: break-word;
   display: -webkit-box;
-  -webkit-line-clamp: 3; // 원하는 라인수
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 `;
 const Box = styled.div`
