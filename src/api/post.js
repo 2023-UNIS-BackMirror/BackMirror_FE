@@ -13,13 +13,3 @@ export const PostFailure = async (type, arr) => {
     console.log(error);
   }
 };
-
-export const Get = async (type) => {
-  try {
-    const res = await client.get(`post/type/${type}`);
-
-    console.log(res);
-  } catch (error) {
-    console.log(error);
-  }
-};
