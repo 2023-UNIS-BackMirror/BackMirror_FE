@@ -24,12 +24,11 @@ const Home = () => {
       </Header>
       <Container>
         <img src={home} alt="" />
-        <p>
-          {" "}
-          onClick =
-          {() => {
+        <p
+          onClick={() => {
             navigate("/category");
           }}
+        >
           실패 기록하러 가기 &gt;
         </p>
       </Container>
