@@ -5,8 +5,12 @@ import QnACompletePage from "./pages/QnACompletePage copy";
 import FailuresPage from "./pages/FailuresPage";
 import FailureDetailPage from "./pages/FailureDetailPage";
 import PromoPage from "./pages/PromoPage";
-import HomeScreen from "./pages/HomeScreen" ;
-import FailListScreen from "./pages/FailListScreen"
+import MyFailsPage from "./pages/MyFailsPage";
+import MyFailDetailPage from "./pages/MyFailDetailPage";
+import StartPage from "./pages/StartPage";
+import Home from "./pages/Home";
+import CategoryPage from "./pages/CategoryPage";
+import LoginPage from "./pages/LoginPage";
 function App() {
   return (
     <Routes>
@@ -16,8 +20,14 @@ function App() {
       <Route path="/failures" element={<FailuresPage />} />
       <Route path="/failures/:id" element={<FailureDetailPage />} />
       <Route path="/promotion" element={<PromoPage />} />
-      <Route path="/goHome" element={<HomeScreen/>}/>
-      <Route path="/goList" element={<FailListScreen/>}/>
+      <Route path="/myfails" element={<MyFailsPage />} />
+      <Route path="/myfails/:postId" element={<MyFailDetailPage />} />
+      <Route path="/start" element={<StartPage />} />
+      <Route path="/" element={<Home />} />
+      <Route path="/category" element={<CategoryPage />} />
+
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/kakao" element={<LoginPage />} />
     </Routes>
   );
 }

@@ -5,7 +5,9 @@ const client = axios.create();
 client.defaults.baseURL = `${SPRING_URL}`;
 client.defaults.withCredentials = true;
 
-const token = localStorage.getItem("token");
+//const token = localStorage.getItem("token");
+const token = "";
+//발급받은 토큰 넣어주세요
 
 console.log("현재 토큰", token);
 
