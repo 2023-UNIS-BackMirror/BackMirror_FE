@@ -1,15 +1,44 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { styled } from "styled-components";
 import BackButton from "../components/BackButton";
 import Failure from "../components/Failures/Failure";
+import { getInterviewList } from "../api/interview";
+
 const FailuresPage = () => {
+  const [list, setList] = useState([]);
+
+  useEffect(() => {
+    getList();
+  }, []);
+
+  const getList = async () => {
+    try {
+      //프로미스 해결 및 데이터 접근
+      const data = await getInterviewList();
+      setList(data.famousFailInfoVos);
+    } catch (error) {
+      console.log("에러 발생", error);
+    }
+  };
+
   return (
     <>
       <BackButton />
       <Title>당신도 할 수 있어요!</Title>
       <Container>
-        <Failure isEven={false} />
-        <Failure isEven={true} />
+        {list[0] &&
+          list.map((item) => {
+            return (
+              <Failure
+                id={item.id}
+                key={item.id}
+                isEven={item.id % 2 === 1}
+                name={item.name}
+                contents={item.contents}
+                image={item.image}
+              />
+            );
+          })}
       </Container>
     </>
   );

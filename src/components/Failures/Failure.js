@@ -1,19 +1,22 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
 
-const Failure = ({ isEven }) => {
+const Failure = ({ id, isEven, image, contents, name }) => {
+  const navigate = useNavigate();
   return (
-    <Box $iseven={isEven}>
+    <Box
+      onClick={() => {
+        navigate(`./${id}`);
+      }}
+      $iseven={isEven}
+    >
       <Img>
-        <img src={""} />
+        <img src={image} alt="" />
       </Img>
       <div className="text">
-        <Name>{"헬렌켈러"}</Name>
-        <Content>
-          {
-            "저도 취업에 실패해 좌절한 경험이 어쩌고 저쩌고  어쩌고 저쩌고  어쩌고 저쩌고  어쩌고 저쩌고  어쩌고 저쩌고 ..................."
-          }
-        </Content>
+        <Name>{name}</Name>
+        <Content>{contents}</Content>
       </div>
     </Box>
   );
@@ -41,8 +44,8 @@ const Name = styled.div`
   letter-spacing: 0.15px;
 `;
 const Content = styled.div`
-  width: 227px;
-  height: 74px;
+  width: 223px;
+  height: 70px;
   flex-shrink: 0;
   color: #fff;
   font-family: Noto Sans KR;
@@ -51,6 +54,12 @@ const Content = styled.div`
   font-weight: 500;
   line-height: 170%; /* 22.1px */
   letter-spacing: 0.13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; // 원하는 라인수
+  -webkit-box-orient: vertical;
 `;
 const Box = styled.div`
   margin: auto;

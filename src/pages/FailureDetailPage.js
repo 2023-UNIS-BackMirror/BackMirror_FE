@@ -1,25 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { styled } from "styled-components";
 import BackButton from "../components/BackButton";
-
+import { getInterviewDetail } from "../api/interview";
+import { useParams } from "react-router-dom";
 const FailureDetailPage = () => {
+  const { id } = useParams();
+  const [detail, setDetail] = useState({});
+  useEffect(() => {
+    getDetail();
+    console.log(detail);
+  }, []);
+
+  const getDetail = async () => {
+    try {
+      //프로미스 해결 및 데이터 접근
+      const data = await getInterviewDetail(id);
+      setDetail(data);
+    } catch (error) {
+      console.log("에러 발생", error);
+    }
+  };
   return (
     <>
       <BackButton />
-      <Title>{"헬렌켈러의 이야기"}</Title>
+      <Title>{`${detail.name}의 이야기`}</Title>
       <Container>
-        <SubTitle>
-          {"실패는 성공의 이모다 어쩌 저쩌구 저쩌  어쩌구 저쩌구 저쩌구"}
-        </SubTitle>
+        <SubTitle>{"subtitle"}</SubTitle>
         <Img>
-          <img src={""} alt="" />
+          <img src={detail.image} alt="" />
         </Img>
         <Writer>{"작성자"}</Writer>
-        <Content>
-          {
-            "실패는 성공의 이모다 어쩌구 저쩌구구실패는 성공의 이모다 어쩌구 패는 성공의 이모다 어쩌구 저쩌구구실패는 성공의 이모다 어쩌구 저쩌구패는 성공의 이모다 어쩌구 저쩌구구실패는 성공의 이모다 어쩌구 저쩌구패는 성공의 이모다 어쩌구 저쩌구패는 성공의 이모다 어쩌구 저쩌구구실패는 성공의 이모다 어쩌구 저쩌구패는 성공의 이모다 어쩌구 저쩌구구실패는 성공의 이모다 어쩌구 저쩌구패는 성공의 이모다 어쩌구 저쩌구구실패는 성공의 이모다 어쩌구 저쩌구패는 성공의 이모다 어쩌구 저쩌구구실패는 성공의 이모다 어쩌구 저쩌구패는 성공의 이모다 어쩌구 저쩌구구실패는 성공의 이모다 어쩌구 저쩌구구실패는 성공의 이모다 어쩌구 저쩌구저쩌구구실패는 성공의 이모다 어쩌구 저쩌구구실패는 성공의 이모다 어쩌구 저쩌구구실패는 성공의 이모다 어쩌구 저쩌구구 실패는 성공의 이모다 어쩌구 저쩌구구실패는 성공의 이모다 어쩌구 저쩌구구실패는 성공의 이모다 어쩌구 저쩌구구실패는 성공의 이모다 어쩌구 저쩌구구실패는 성공의 이모다 어쩌구 저쩌구구실패는 성공의 이모다 어쩌구 저쩌구구실패는 성공의 이모다 어쩌구 저쩌구구실패는 성공의 이모다 어쩌구 저쩌구구실패는 성공의 이모다 어쩌구 저쩌구구실패는 성공의 이모다 어쩌구 저쩌구구"
-          }
-        </Content>
+        <Content>{detail.contents}</Content>
       </Container>
     </>
   );
@@ -77,17 +88,7 @@ const SubTitle = styled.div`
   text-overflow: ellipsis;
   white-space: nowrap;
 `;
-const Date = styled.div`
-  width: 141px;
-  height: 30.015px;
-  flex-shrink: 0;
-  color: #000;
-  font-family: Inter;
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 100;
-  line-height: normal;
-`;
+
 const Content = styled.div`
   margin: auto;
   margin-top: 12px;
@@ -99,7 +100,7 @@ const Content = styled.div`
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  line-height: normal;
+  line-height: 180%;
   overflow: scroll;
 `;
 

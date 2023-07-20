@@ -1,9 +1,14 @@
 import React from "react";
 import { styled } from "styled-components";
 
-const Failure = ({ isEven, img, type }) => {
+const Failure = ({ isEven, img, type, link }) => {
   return (
-    <Box $iseven={isEven}>
+    <Box
+      $iseven={isEven}
+      onClick={() => {
+        window.open(link);
+      }}
+    >
       <Img>
         <img src={img} alt="" />
       </Img>
