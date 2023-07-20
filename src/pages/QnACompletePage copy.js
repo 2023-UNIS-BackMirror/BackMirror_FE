@@ -21,7 +21,7 @@ const QnACompletePage = () => {
       <Btns>
         <CompleteBtn
           onClick={() => {
-            navigate("");
+            navigate("/goHome");
           }}
         >
           나의 실패
