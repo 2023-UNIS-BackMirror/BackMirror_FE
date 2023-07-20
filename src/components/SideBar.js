@@ -42,7 +42,7 @@ const SideBar = ({ isOpen, setIsOpen }) => {
           <Item
             onClick={() => {
               setIsOpen(!isOpen);
-              navigate("/home");
+              navigate("/");
             }}
           >
             홈

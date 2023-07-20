@@ -6,8 +6,8 @@ client.defaults.baseURL = `${SPRING_URL}`;
 client.defaults.withCredentials = true;
 
 //const token = localStorage.getItem("token");
-const token =
-  "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNCIsImF1dGgiOiIxNCIsInR5cGUiOiJhY2Nlc3MiLCJpYXQiOjE2ODk4ODE3OTl9.-znGRta9ZFKi8B0M20AXNOzYhGfXJtIZAzecSsl4y028b2qOCkZVur4OeGioJZmaifsG7HmJjSCWSnmdVb6Pnw";
+const token = "";
+//발급받은 토큰 넣어주세요
 
 console.log("현재 토큰", token);
 
