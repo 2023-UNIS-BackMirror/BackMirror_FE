@@ -1,24 +1,68 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import QuestionBox from "../components/QnA/QuestionBox";
 import BackButton from "../components/BackButton";
 import grayStone from "../assets/grayStone.png";
 import { styled } from "styled-components";
 import next from "../assets/next.png";
+import { GetQuestion } from "../api/question";
+import { useNavigate, useParams } from "react-router-dom";
+import { PostFailure } from "../api/post";
 
 const QnAPage = () => {
+  //const { type } = useParams();
+  const type = "money";
+  const [index, setIndex] = useState(0);
+  const [questions, setQuestions] = useState([]);
+  const [answer, setAnswer] = useState("");
+  const [arr, setArr] = useState([]);
+  const navigate = useNavigate();
+  useEffect(() => {
+    getList(type);
+  }, []);
+
+  const getList = async (type) => {
+    try {
+      //프로미스 해결 및 데이터 접근
+      setQuestions(await GetQuestion(type));
+    } catch (error) {
+      console.log("에러 발생", error);
+    }
+  };
+
   return (
     <div>
       <BackButton />
       <Wrapper>
-        <QuestionBox text={"당신이 생각하는 문제 해결 방법은 무엇인가요?"} />
+        <QuestionBox text={questions[index] && questions[index].contents} />
         <Stone>
           <img src={grayStone} alt="" />
         </Stone>
         <Answer>
-          <textarea placeholder="답변을 입력해주세요." />
+          <textarea
+            placeholder="답변을 입력해주세요."
+            onChange={(e) => {
+              setAnswer(e.target.value);
+            }}
+            value={answer}
+          />
         </Answer>
       </Wrapper>
-      <NextButton>
+      <NextButton
+        onClick={() => {
+          setArr(() => [
+            ...arr,
+            { questionId: questions[index].id, answer: answer },
+          ]);
+
+          if (index === questions.length - 1) {
+            navigate("/complete");
+            //post
+            PostFailure(type, arr);
+          }
+          setIndex(index + 1);
+          setAnswer("");
+        }}
+      >
         <img src={next} alt="" />
       </NextButton>
     </div>

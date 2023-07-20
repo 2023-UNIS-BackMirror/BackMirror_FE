@@ -8,7 +8,7 @@ import PromoPage from "./pages/PromoPage";
 function App() {
   return (
     <Routes>
-      <Route path="/qna" element={<QnAPage />} />
+      <Route path="/qna/:type" element={<QnAPage />} />
       <Route path="/cheer" element={<CheerPage />} />
       <Route path="/complete" element={<QnACompletePage />} />
       <Route path="/failures" element={<FailuresPage />} />

@@ -2,10 +2,13 @@ import React, { useEffect, useState } from "react";
 import { styled } from "styled-components";
 import BackButton from "../components/BackButton";
 import Failure from "../components/Failures/Failure";
-import { getInterviewList } from "../api/interview";
+import { getInterviewList } from "../api/famous";
+import sideBar from "../assets/sideBar.png";
+import SideBar from "../components/SideBar";
 
 const FailuresPage = () => {
   const [list, setList] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     getList();
@@ -14,8 +17,7 @@ const FailuresPage = () => {
   const getList = async () => {
     try {
       //프로미스 해결 및 데이터 접근
-      const data = await getInterviewList();
-      setList(data.famousFailInfoVos);
+      setList(await getInterviewList());
     } catch (error) {
       console.log("에러 발생", error);
     }
@@ -23,10 +25,20 @@ const FailuresPage = () => {
 
   return (
     <>
-      <BackButton />
+      <Header>
+        <BackButton />
+        <Btn
+          onClick={() => {
+            setIsOpen(!isOpen);
+          }}
+        >
+          <img src={sideBar} alt="" />
+        </Btn>
+        {isOpen ? <SideBar isOpen={isOpen} setIsOpen={setIsOpen} /> : null}
+      </Header>
       <Title>당신도 할 수 있어요!</Title>
       <Container>
-        {list[0] &&
+        {list &&
           list.map((item) => {
             return (
               <Failure
@@ -45,6 +57,17 @@ const FailuresPage = () => {
 };
 
 export default FailuresPage;
+const Header = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+const Btn = styled.div`
+  margin-top: 15px;
+  margin-right: 10px;
+  img {
+    width: 45px;
+  }
+`;
 const Container = styled.div`
   margin-top: 33px;
 `;

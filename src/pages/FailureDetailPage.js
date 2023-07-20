@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { styled } from "styled-components";
 import BackButton from "../components/BackButton";
-import { getInterviewDetail } from "../api/interview";
+import { getInterviewDetail } from "../api/famous";
 import { useParams } from "react-router-dom";
 const FailureDetailPage = () => {
   const { id } = useParams();
@@ -25,11 +25,11 @@ const FailureDetailPage = () => {
       <BackButton />
       <Title>{`${detail.name}의 이야기`}</Title>
       <Container>
-        <SubTitle>{"subtitle"}</SubTitle>
+        <SubTitle>{detail.title}</SubTitle>
         <Img>
           <img src={detail.image} alt="" />
         </Img>
-        <Writer>{"작성자"}</Writer>
+        <Writer>{detail.name}</Writer>
         <Content>{detail.contents}</Content>
       </Container>
     </>
@@ -45,6 +45,10 @@ const Img = styled.div`
   flex-shrink: 0;
   border-radius: 5px;
   background: #fafafa;
+  img {
+    width: 306px;
+    height: 246.79px;
+  }
 `;
 const Writer = styled.div`
   margin-top: 12px;
@@ -73,9 +77,10 @@ const Title = styled.div`
   letter-spacing: 0.22px;
 `;
 const SubTitle = styled.div`
+  text-align: center;
   margin: auto;
-  width: 299px;
-  height: 24px;
+  width: 220px;
+  height: 45px;
   flex-shrink: 0;
   color: #6db3d9;
   font-family: Noto Sans KR;
@@ -84,9 +89,13 @@ const SubTitle = styled.div`
   font-weight: 700;
   line-height: normal;
   padding-top: 32px;
+
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  word-break: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 `;
 
 const Content = styled.div`
