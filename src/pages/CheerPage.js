@@ -3,7 +3,7 @@ import BackButton from "../components/BackButton";
 import { styled } from "styled-components";
 import QuestionBox from "../components/QnA/QuestionBox";
 import blueStone from "../assets/blueStone.png";
-const QnACompletePage = () => {
+const CheerPage = () => {
   return (
     <>
       <BackButton />
@@ -26,7 +26,7 @@ const QnACompletePage = () => {
   );
 };
 
-export default QnACompletePage;
+export default CheerPage;
 
 const Wrapper = styled.div`
   margin-top: 16px;
