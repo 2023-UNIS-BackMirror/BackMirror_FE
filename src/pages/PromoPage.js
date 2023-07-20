@@ -9,12 +9,8 @@ import book from "../assets/Promo/book.png";
 import SideBar from "../components/SideBar";
 import sideBar from "../assets/sideBar.png";
 import { useState } from "react";
-import { Get } from "../api/post";
+
 const PromoPage = () => {
-  //테스트용
-  useEffect(() => {
-    Get("money");
-  });
   const promoList = [
     {
       isEven: false,
