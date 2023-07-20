@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import BackButton from "../components/BackButton";
 import PromoItem from "../components/Promo/PromoItem";
 import { styled } from "styled-components";
@@ -9,7 +9,12 @@ import book from "../assets/Promo/book.png";
 import SideBar from "../components/SideBar";
 import sideBar from "../assets/sideBar.png";
 import { useState } from "react";
+import { Get } from "../api/post";
 const PromoPage = () => {
+  //테스트용
+  useEffect(() => {
+    Get("money");
+  });
   const promoList = [
     {
       isEven: false,
