@@ -1,7 +1,7 @@
 import React from "react";
 import BackButton from "../components/BackButton";
 import { styled } from "styled-components";
-import stones from "../assets/stones.png";
+import stones from "../assets/stones.gif";
 import { useNavigate } from "react-router-dom";
 const QnACompletePage = () => {
   const navigate = useNavigate();

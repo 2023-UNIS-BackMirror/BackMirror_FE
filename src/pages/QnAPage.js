@@ -9,16 +9,26 @@ import { useNavigate, useParams } from "react-router-dom";
 import { PostFailure } from "../api/post";
 
 const QnAPage = () => {
-  //const { type } = useParams();
-  const type = "money";
+  const { type } = useParams();
   const [index, setIndex] = useState(0);
   const [questions, setQuestions] = useState([]);
   const [answer, setAnswer] = useState("");
   const [arr, setArr] = useState([]);
+
   const navigate = useNavigate();
   useEffect(() => {
     getList(type);
   }, []);
+
+  useEffect(() => {
+    setAnswer("");
+    console.log(index);
+    if (index && index === questions.length) {
+      navigate("/complete");
+
+      PostFailure(type, arr);
+    }
+  }, [arr]);
 
   const getList = async (type) => {
     try {
@@ -49,18 +59,12 @@ const QnAPage = () => {
       </Wrapper>
       <NextButton
         onClick={() => {
-          setArr(() => [
-            ...arr,
-            { questionId: questions[index].id, answer: answer },
-          ]);
-
-          if (index === questions.length - 1) {
-            navigate("/complete");
-            //post
-            PostFailure(type, arr);
-          }
-          setIndex(index + 1);
-          setAnswer("");
+          setIndex((index) => index + 1);
+          const el = { questionId: questions[index].id, answer: answer };
+          setArr((arr) => {
+            const newArr = [...arr, el];
+            return newArr;
+          });
         }}
       >
         <img src={next} alt="" />
