@@ -5,11 +5,7 @@ import { styled } from "styled-components";
 const FailDetail = ({ postId, question, answer }) => {
   const navigate = useNavigate();
   return (
-    <Box
-      onClick={() => {
-        navigate(`./${postId}`);
-      }}
-    >
+    <Box>
       <div className="text">
         <Name>{question}</Name>
         <Content>{answer}</Content>
