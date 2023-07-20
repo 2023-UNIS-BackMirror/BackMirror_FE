@@ -16,13 +16,26 @@ const QnACompletePage = () => {
           <img src={stones} alt="" />
         </Stone>
       </Wrapper>
-      <CompleteBtn>실패 목록 가기</CompleteBtn>
+      <Btns>
+        <CompleteBtn>
+          나의 실패
+          <br />
+          목록으로
+        </CompleteBtn>
+        <CompleteBtn>
+          실패담
+          <br />
+          목록으로
+        </CompleteBtn>
+      </Btns>
     </>
   );
 };
 
 export default QnACompletePage;
-
+const Btns = styled.div`
+  display: flex;
+`;
 const Wrapper = styled.div`
   margin-top: 16px;
   display: flex;
@@ -46,7 +59,7 @@ const Title = styled.div`
   letter-spacing: 0.22px;
 `;
 const Stone = styled.div`
-  margin-top: 40px;
+  margin-top: 35px;
   display: flex;
   justify-content: center;
   img {
@@ -55,9 +68,10 @@ const Stone = styled.div`
 `;
 
 const CompleteBtn = styled.div`
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   margin: auto;
   margin-top: 26px;
-  width: 327px;
+  width: 170px;
   height: 48px;
   flex-shrink: 0;
   border-radius: 12px;
