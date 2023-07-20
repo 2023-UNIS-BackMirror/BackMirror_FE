@@ -17,13 +17,15 @@ const SideBar = ({ isOpen, setIsOpen }) => {
         <div>
           <Item
             onClick={() => {
-              "";
+              setIsOpen(!isOpen);
+              navigate("");
             }}
           >
             나의 실패 목록
           </Item>
           <Item
             onClick={() => {
+              setIsOpen(!isOpen);
               navigate("/failures");
             }}
           >
@@ -32,12 +34,14 @@ const SideBar = ({ isOpen, setIsOpen }) => {
           <Item
             onClick={() => {
               setIsOpen(!isOpen);
+              navigate("/promotion");
             }}
           >
             홍보 게시판
           </Item>
           <Item
             onClick={() => {
+              setIsOpen(!isOpen);
               navigate("/");
             }}
           >
