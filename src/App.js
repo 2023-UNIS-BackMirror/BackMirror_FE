@@ -4,6 +4,7 @@ import CheerPage from "./pages/CheerPage";
 import QnACompletePage from "./pages/QnACompletePage copy";
 import FailuresPage from "./pages/FailuresPage";
 import FailureDetailPage from "./pages/FailureDetailPage";
+import PromoPage from "./pages/PromoPage";
 function App() {
   return (
     <Routes>
@@ -12,6 +13,7 @@ function App() {
       <Route path="/complete" element={<QnACompletePage />} />
       <Route path="/failures" element={<FailuresPage />} />
       <Route path="/failures/:id" element={<FailureDetailPage />} />
+      <Route path="/promotion" element={<PromoPage />} />
     </Routes>
   );
 }
