@@ -5,6 +5,8 @@ import QnACompletePage from "./pages/QnACompletePage copy";
 import FailuresPage from "./pages/FailuresPage";
 import FailureDetailPage from "./pages/FailureDetailPage";
 import PromoPage from "./pages/PromoPage";
+import HomeScreen from "./pages/HomeScreen" ;
+import FailListScreen from "./pages/FailListScreen"
 function App() {
   return (
     <Routes>
@@ -14,6 +16,8 @@ function App() {
       <Route path="/failures" element={<FailuresPage />} />
       <Route path="/failures/:id" element={<FailureDetailPage />} />
       <Route path="/promotion" element={<PromoPage />} />
+      <Route path="/goHome" element={<HomeScreen/>}/>
+      <Route path="/goList" element={<FailListScreen/>}/>
     </Routes>
   );
 }
