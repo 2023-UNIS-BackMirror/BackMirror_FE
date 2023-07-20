@@ -84,6 +84,7 @@ const Title = styled.div`
   line-height: 170%; /* 37.4px */
   letter-spacing: 0.22px;
 `;
+
 const Btn = styled.div`
   margin-top: 15px;
   margin-right: 10px;

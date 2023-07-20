@@ -2,7 +2,9 @@ import React from "react";
 import BackButton from "../components/BackButton";
 import { styled } from "styled-components";
 import stones from "../assets/stones.png";
+import { useNavigate } from "react-router-dom";
 const QnACompletePage = () => {
+  const navigate = useNavigate();
   return (
     <>
       <BackButton />
@@ -17,12 +19,20 @@ const QnACompletePage = () => {
         </Stone>
       </Wrapper>
       <Btns>
-        <CompleteBtn>
+        <CompleteBtn
+          onClick={() => {
+            navigate("");
+          }}
+        >
           나의 실패
           <br />
           목록으로
         </CompleteBtn>
-        <CompleteBtn>
+        <CompleteBtn
+          onClick={() => {
+            navigate("/failures");
+          }}
+        >
           실패담
           <br />
           목록으로
