@@ -35,7 +35,12 @@ const PromoPage = () => {
       <Title>당신을 도울 컨텐츠</Title>
       {promoList.map((item) => {
         return (
-          <PromoItem isEven={item.isEven} img={item.img} type={item.type} />
+          <PromoItem
+            key={item.type}
+            isEven={item.isEven}
+            img={item.img}
+            type={item.type}
+          />
         );
       })}
     </div>

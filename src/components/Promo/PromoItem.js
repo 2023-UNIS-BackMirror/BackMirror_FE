@@ -5,7 +5,7 @@ const Failure = ({ isEven, img, type }) => {
   return (
     <Box $iseven={isEven}>
       <Img>
-        <img src={img} />
+        <img src={img} alt="" />
       </Img>
       <div className="text">
         <Name>{type}</Name>
