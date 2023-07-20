@@ -18,7 +18,7 @@ const SideBar = ({ isOpen, setIsOpen }) => {
           <Item
             onClick={() => {
               setIsOpen(!isOpen);
-              navigate("/goList");
+              navigate("/myfails");
             }}
           >
             나의 실패 목록
@@ -42,7 +42,7 @@ const SideBar = ({ isOpen, setIsOpen }) => {
           <Item
             onClick={() => {
               setIsOpen(!isOpen);
-              navigate("/goHome");
+              navigate("/home");
             }}
           >
             홈
