@@ -47,7 +47,6 @@ const SideBar = ({ isOpen, setIsOpen }) => {
           >
             당신을 도울 컨텐츠
           </Item>
-          
         </div>
       </Modal>
     </>

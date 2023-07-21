@@ -62,7 +62,7 @@ const Name = styled.div`
     font-weight: lighter;
     color: #bcbcbc;
     text-align: right;
-  }
+  }66eba2a7b83b32ace61a
 `;
 const Content = styled.div`
   width: 223px;
