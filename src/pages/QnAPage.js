@@ -24,7 +24,7 @@ const QnAPage = () => {
     setAnswer("");
     console.log(index);
     if (index && index === questions.length) {
-      navigate("/cheer");
+      navigate("/complete");
 
       PostFailure(type, arr);
     }
@@ -34,6 +34,7 @@ const QnAPage = () => {
     try {
       //프로미스 해결 및 데이터 접근
       setQuestions(await GetQuestion(type));
+      console.log(questions)
     } catch (error) {
       console.log("에러 발생", error);
     }
@@ -100,7 +101,7 @@ const Title = styled.div`
   font-size: 25px;
   font-style: normal;
   font-weight: 600;
-  color: #78A8B7;
+  color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
