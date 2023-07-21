@@ -42,6 +42,9 @@ const PromoPage = () => {
     <div>
       <Header>
         <BackButton />
+        <MenuTitle>
+          <p>당신을 도울 컨텐츠</p>
+        </MenuTitle>        
         <Btn
           onClick={() => {
             setIsOpen(!isOpen);
@@ -51,7 +54,7 @@ const PromoPage = () => {
         </Btn>
         {isOpen ? <SideBar isOpen={isOpen} setIsOpen={setIsOpen} /> : null}
       </Header>
-      <Title>당신을 도울 컨텐츠</Title>
+
       {promoList.map((item) => {
         return (
           <PromoItem
@@ -71,25 +74,23 @@ export default PromoPage;
 const Header = styled.div`
   display: flex;
   justify-content: space-between;
+  margin-bottom: 40px;
 `;
-const Title = styled.div`
-  margin: auto;
-  margin-bottom: 42px;
-  width: 283px;
-  color: #6db3d9;
-  text-align: center;
-  font-family: Noto Sans KR;
-  font-size: 22px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 170%; /* 37.4px */
-  letter-spacing: 0.22px;
-`;
-
 const Btn = styled.div`
+  cursor: pointer;
   margin-top: 15px;
   margin-right: 10px;
   img {
     width: 45px;
   }
+`;
+const MenuTitle = styled.div`
+  cursor: pointer;
+  margin-top: 5px;
+  color: #6DB3D9;
+  font-family: Inter;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
 `;

@@ -26,16 +26,16 @@ const QnACompletePage = () => {
         >
           나의 실패
           <br />
-          목록으로
+          보관함으로
         </CompleteBtn>
         <CompleteBtn
           onClick={() => {
             navigate("/failures");
           }}
         >
-          실패담
+          유명 인사의 실패담
           <br />
-          목록으로
+          알아보기
         </CompleteBtn>
       </Btns>
     </>
@@ -57,7 +57,7 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.div`
-  margin-top: 7px;
+  margin-top: 0px;
   width: 283px;
   color: #6db3d9;
   text-align: center;
@@ -69,18 +69,17 @@ const Title = styled.div`
   letter-spacing: 0.22px;
 `;
 const Stone = styled.div`
-  margin-top: 35px;
+  margin-top: 20px;
   display: flex;
   justify-content: center;
   img {
-    width: 100vw;
+    width: 320px;
   }
 `;
 
 const CompleteBtn = styled.div`
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   margin: auto;
-  margin-top: 26px;
+  margin-top: 35px;
   width: 170px;
   height: 48px;
   flex-shrink: 0;
@@ -95,7 +94,8 @@ const CompleteBtn = styled.div`
   font-family: Montserrat;
   font-size: 14px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 800;
   line-height: normal;
   letter-spacing: 0.7px;
+  cursor: pointer;
 `;

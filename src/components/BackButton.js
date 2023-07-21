@@ -17,6 +17,7 @@ const BackButton = () => {
 export default BackButton;
 
 const Back = styled.div`
+  cursor: pointer;
   margin-top: 15px;
   margin-left: 10px;
   color: #6db3d9;

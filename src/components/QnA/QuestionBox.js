@@ -21,20 +21,20 @@ const QBox = styled.div`
   position: relative;
   img {
     width: 307px;
-    height: 204.002px;
+    height: 180px;
   }
   .question {
     width: 270px;
     height: 128px;
 
     position: absolute;
-    top: 40%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
 
     color: #fff;
     font-family: Noto Sans KR;
-    font-size: 22px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 700;
     line-height: 170%; /* 37.4px */

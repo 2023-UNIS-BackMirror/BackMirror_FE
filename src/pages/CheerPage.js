@@ -21,7 +21,7 @@ const CheerPage = () => {
           <img src={blueStone} alt="" />
         </Stone>
       </Wrapper>
-      <CompleteBtn>작성완료</CompleteBtn>
+      <CompleteBtn >작성 완료하기</CompleteBtn>
     </>
   );
 };
@@ -51,7 +51,7 @@ const Title = styled.div`
   letter-spacing: 0.22px;
 `;
 const Stone = styled.div`
-  margin-top: 93px;
+  margin-top: 30px;
   display: flex;
   justify-content: center;
   img {
@@ -75,9 +75,9 @@ const CompleteBtn = styled.div`
   color: #fff;
   text-align: center;
   font-family: Montserrat;
-  font-size: 14px;
+  font-size: 16px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 800;
   line-height: normal;
   letter-spacing: 0.7px;
 `;

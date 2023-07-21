@@ -18,10 +18,18 @@ const SideBar = ({ isOpen, setIsOpen }) => {
           <Item
             onClick={() => {
               setIsOpen(!isOpen);
+              navigate("/");
+            }}
+          >
+            홈
+          </Item>
+          <Item
+            onClick={() => {
+              setIsOpen(!isOpen);
               navigate("/myfails");
             }}
           >
-            나의 실패 목록
+            나의 실패 보관함
           </Item>
           <Item
             onClick={() => {
@@ -29,7 +37,7 @@ const SideBar = ({ isOpen, setIsOpen }) => {
               navigate("/failures");
             }}
           >
-            유명인 실패담 보러가기
+            유명인사의 실패담 보러가기
           </Item>
           <Item
             onClick={() => {
@@ -37,15 +45,7 @@ const SideBar = ({ isOpen, setIsOpen }) => {
               navigate("/promotion");
             }}
           >
-            홍보 게시판
-          </Item>
-          <Item
-            onClick={() => {
-              setIsOpen(!isOpen);
-              navigate("/");
-            }}
-          >
-            홈
+            당신을 도울 컨텐츠
           </Item>
         </div>
       </Modal>
@@ -66,6 +66,7 @@ const Item = styled.div`
   font-weight: 400;
   justify-content: start;
   align-items: center;
+  cursor: pointer;
 `;
 const Layer = styled.div`
   display: block;
@@ -80,7 +81,7 @@ const Modal = styled.div`
   border-radius: 13px;
   background: rgba(164, 210, 224, 0.38);
   backdrop-filter: blur(40.774227142333984px);
-  width: 50%;
+  width: 300px;
   height: 50%;
 
   box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.15);
@@ -90,8 +91,8 @@ const Modal = styled.div`
   align-items: center;
 
   position: fixed;
-  top: 0%;
-  right: 0%;
+  top: 10%;
+  left: 46%;
   transform: translate(0%, 0%);
   div {
     width: 90%;
@@ -104,7 +105,7 @@ const Modal = styled.div`
     font-family: Inter;
     font-size: 20px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 800;
     line-height: 20px; /* 100% */
     letter-spacing: -0.24px;
   }

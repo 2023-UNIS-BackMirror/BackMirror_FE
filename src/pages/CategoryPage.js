@@ -10,7 +10,7 @@ const CategoryPage = () => {
       <Header>
         <BackButton />
       </Header>
-      <Title>실패 카테고리</Title>
+      <Title>실패 유형을 선택해주세요</Title>
       <Container>
         <Item
           onClick={() => {
@@ -69,7 +69,7 @@ const Item = styled.div`
     height: 60px;
   }
   p {
-    color: #9b9b9b;
+    color: #585858;
     font-family: Noto Sans KR;
     font-size: 20px;
     font-style: normal;
@@ -94,7 +94,8 @@ const Btn = styled.div`
   }
 `;
 const Container = styled.div`
-  margin-top: 33px;
+  cursor: pointer;
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -102,7 +103,7 @@ const Container = styled.div`
 `;
 const Title = styled.div`
   margin: auto;
-  margin-top: 3px;
+  margin-top: 20px;
   width: 283px;
   color: #6db3d9;
   text-align: center;

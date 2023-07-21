@@ -27,9 +27,9 @@ const FailureDetailPage = () => {
       <Container>
         <SubTitle>{detail.title}</SubTitle>
         <Img>
-          <img src={detail.image} alt="" />
+          <div><img src={detail.image} alt="" /></div>
         </Img>
-        <Writer>{detail.name}</Writer>
+        {/* <Writer>{detail.name}</Writer> */}
         <Content>{detail.contents}</Content>
       </Container>
     </>
@@ -38,16 +38,18 @@ const FailureDetailPage = () => {
 
 export default FailureDetailPage;
 const Img = styled.div`
-  margin: auto;
-  margin-top: 30px;
-  width: 306px;
-  height: 246.79px;
+  margin: 20px auto;
+  width: 100%;
   flex-shrink: 0;
   border-radius: 5px;
-  background: #fafafa;
+  div {
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+  }
   img {
-    width: 306px;
-    height: 246.79px;
+    min-width: 40%;
+    margin: auto;
   }
 `;
 const Writer = styled.div`
@@ -79,12 +81,11 @@ const Title = styled.div`
 const SubTitle = styled.div`
   text-align: center;
   margin: auto;
-  width: 220px;
-  height: 45px;
+  width: 283px;
   flex-shrink: 0;
-  color: #6db3d9;
+  color: #000000;
   font-family: Noto Sans KR;
-  font-size: 20px;
+  font-size: 17px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -100,9 +101,9 @@ const SubTitle = styled.div`
 
 const Content = styled.div`
   margin: auto;
-  margin-top: 12px;
   width: 306px;
-  height: 263.465px;
+  max-height: 263px;
+  padding: 15px;
   flex-shrink: 0;
   color: #3a3a3a;
   font-family: Noto Sans KR;
@@ -114,10 +115,13 @@ const Content = styled.div`
 `;
 
 const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-contents: center;
   margin: auto;
   margin-top: 42px;
   width: 349px;
-  height: 667px;
+  height: 600px;
   flex-shrink: 0;
   border-radius: 15px;
   background: #d2e8ef;

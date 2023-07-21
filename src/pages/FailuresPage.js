@@ -27,6 +27,9 @@ const FailuresPage = () => {
     <>
       <Header>
         <BackButton />
+        <MenuTitle>
+          <p>당신도 할 수 있어요!</p>
+        </MenuTitle>        
         <Btn
           onClick={() => {
             setIsOpen(!isOpen);
@@ -36,7 +39,7 @@ const FailuresPage = () => {
         </Btn>
         {isOpen ? <SideBar isOpen={isOpen} setIsOpen={setIsOpen} /> : null}
       </Header>
-      <Title>당신도 할 수 있어요!</Title>
+      
       <Container>
         {list &&
           list.map((item) => {
@@ -69,18 +72,17 @@ const Btn = styled.div`
   }
 `;
 const Container = styled.div`
-  margin-top: 33px;
+  margin-top: 30px;
+  cursor: poitner;
 `;
-const Title = styled.div`
-  margin: auto;
-  margin-top: 3px;
-  width: 283px;
-  color: #6db3d9;
-  text-align: center;
-  font-family: Montserrat;
-  font-size: 22px;
+const MenuTitle = styled.div`
+  cursor: pointer;
+  margin-top: 5px;
+  color: #6DB3D9;
+  font-family: Inter;
+  font-size: 25px;
   font-style: normal;
   font-weight: 600;
-  line-height: 170%;
-  letter-spacing: 0.22px;
+  line-height: normal;
 `;
+

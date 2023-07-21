@@ -32,15 +32,15 @@ const Img = styled.div`
   justify-content: center;
   align-items: center;
   img {
-    width: 75px;
-    height: 75px;
+    width: 55px;
+    height: 55px;
   }
 `;
 const Name = styled.div`
   width: 203px;
   color: #fff;
   font-family: Noto Sans KR;
-  font-size: 15px;
+  font-size: 22px;
   font-style: normal;
   font-weight: 700;
   line-height: 170%; /* 25.5px */
@@ -52,7 +52,7 @@ const Content = styled.div`
   flex-shrink: 0;
   color: #fff;
   font-family: Noto Sans KR;
-  font-size: 13px;
+  font-size: 14px;
   font-style: normal;
   font-weight: 500;
   line-height: 170%; /* 22.1px */
@@ -62,7 +62,7 @@ const Box = styled.div`
   margin: auto;
   margin-bottom: 25px;
   width: 363px;
-  height: 127px;
+  height: 120px;
   flex-shrink: 0;
   border-radius: 30px;
   background: ${(props) => (props.$iseven ? "#78A8B7" : "#a4d2e0")};
@@ -70,8 +70,8 @@ const Box = styled.div`
   display: flex;
 
   .text {
-    margin-top: 14px;
-    margin-left: 15px;
+    margin-top: 25px;
+    margin-left: 5px;
     width: 227px;
     display: flex;
     flex-direction: column;

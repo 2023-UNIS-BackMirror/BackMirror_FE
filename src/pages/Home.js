@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { styled } from "styled-components";
 import BackButton from "../components/BackButton";
 import home from "../assets/home.png";
+import logo from "../assets/logo.png";
 import sideBar from "../assets/sideBar.png";
 import SideBar from "../components/SideBar";
 import { useNavigate } from "react-router-dom";
@@ -13,6 +14,9 @@ const Home = () => {
     <>
       <Header>
         <BackButton />
+        <MenuTitle>
+          <p onClick ={() => {navigate("/");}}>Back Mirror</p>
+        </MenuTitle>        
         <Btn
           onClick={() => {
             setIsOpen(!isOpen);
@@ -24,11 +28,10 @@ const Home = () => {
       </Header>
       <Container>
         <img src={home} alt="" />
-        <p
-          onClick={() => {
+        <p onClick =
+          {() => {
             navigate("/category");
-          }}
-        >
+          }}>          
           실패 기록하러 가기 &gt;
         </p>
       </Container>
@@ -38,7 +41,7 @@ const Home = () => {
 
 export default Home;
 const Container = styled.div`
-  margin-top: 60px;
+  margin-top: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -48,6 +51,7 @@ const Container = styled.div`
     height: 480px;
   }
   p {
+    cursor: pointer;
     margin-top: 50px;
     color: #000;
     font-family: Inter;
@@ -62,9 +66,20 @@ const Header = styled.div`
   justify-content: space-between;
 `;
 const Btn = styled.div`
-  margin-top: 15px;
+  cursor: pointer;
+  margin-top: 25px;
   margin-right: 10px;
   img {
     width: 45px;
   }
+`;
+const MenuTitle = styled.div`
+  cursor: pointer;
+  margin-top: 5px;
+  color: #6DB3D9;
+  font-family: Inter;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
 `;

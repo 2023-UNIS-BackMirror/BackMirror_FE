@@ -33,7 +33,7 @@ const Img = styled.div`
 `;
 const Name = styled.div`
   width: 100%;
-  color: #fff;
+  color: #5F90DB;
   font-family: Noto Sans KR;
   font-size: 15px;
   font-style: normal;
@@ -45,7 +45,7 @@ const Content = styled.div`
   width: 223px;
   height: 70px;
   flex-shrink: 0;
-  color: #fff;
+  color: #5F90DB;
   font-family: Noto Sans KR;
   font-size: 13px;
   font-style: normal;
@@ -65,9 +65,10 @@ const Box = styled.div`
   width: 363px;
   height: 127px;
   flex-shrink: 0;
-  border-radius: 30px;
-  background: ${(props) => (props.$iseven ? "#78A8B7" : "#a4d2e0")};
-  box-shadow: 0px 0px 10px 0px #a4d2e0;
+  border-radius: 20px;
+  background: #F9FBFE;
+  border: solid 0.5px  ${(props) => (props.$iseven ? "#78A8B7" : "#a4d2e0")};
+  box-shadow: 0px 0px 3px 0px #5F90DB;
   display: flex;
 
   .text {

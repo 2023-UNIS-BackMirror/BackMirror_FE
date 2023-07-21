@@ -34,6 +34,7 @@ const QnAPage = () => {
     try {
       //프로미스 해결 및 데이터 접근
       setQuestions(await GetQuestion(type));
+      console.log(questions)
     } catch (error) {
       console.log("에러 발생", error);
     }
@@ -41,7 +42,11 @@ const QnAPage = () => {
 
   return (
     <div>
-      <BackButton />
+      <Header>
+        <BackButton />
+        <Title>실패 기록</Title>
+      </Header>
+      
       <Wrapper>
         <QuestionBox text={questions[index] && questions[index].contents} />
         <Stone>
@@ -78,33 +83,49 @@ const NextButton = styled.div`
   display: flex;
   justify-content: end;
   margin-right: 15px;
-  margin-top: 30px;
+  margin-top: 20px;
   img {
     width: 36px;
     height: 36px;
     flex-shrink: 0;
   }
+  cursor: pointer;
 `;
-
+const Header = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+const Title = styled.div`
+  margin: 30px auto;
+  font-family: Montserrat;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 600;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 const Wrapper = styled.div`
   margin-top: 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
+
 const Stone = styled.div`
   margin-top: 10px;
   display: flex;
   justify-content: center;
   img {
-    width: 225px;
-    height: 164px;
+    width: 200px;
+    height: 145px;
   }
 `;
 const Answer = styled.div`
-  margin-top: 59px;
+  margin-top: 40px;
   width: 340px;
-  height: 203px;
+  height: 180px;
   border-radius: 12px;
   border: 2px solid #d2e8ef;
   background: #fafafa;
@@ -126,4 +147,14 @@ const Answer = styled.div`
     letter-spacing: 0.16px;
     outline: none;
   }
+`;
+const MenuTitle = styled.div`
+  cursor: pointer;
+  margin-top: 5px;
+  color: #6DB3D9;
+  font-family: Inter;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
 `;
